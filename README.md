@@ -1,0 +1,2 @@
+# Live Manager
+Live manager is an all-in-one utility for live streaming. It allows installation of common streaming tools like OBS Studio (and plugins for it) in one click. Live Manager lets you control OBS Studio remotely.
