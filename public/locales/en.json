@@ -1,0 +1,11 @@
+{
+    "theme": {
+        "light": "Light",
+        "light.contrast": "Light Contrast",
+        "dark": "Dark",
+        "dark.contrast": "Dark Contrast",
+        "amoled": "Amoled",
+        "ocean": "Ocean",
+        "sapphire": "Sapphire"
+    }
+}
