@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "lib": ["ESNext", "DOM"],
+        "target": "ESNext",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "strict": true,
+        "skipLibCheck": true,
+
+        "outDir": "dist/app"
+    },
+    "include": [
+        "app",
+        "shared.d.ts"
+    ]
+}

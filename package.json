@@ -2,9 +2,40 @@
   "name": "livebloom",
   "version": "0.0.1",
   "description": "All-in-one utility for Live Streamers",
-  "main": "dist/main/index.js",
+  "main": "dist/app/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run build/all && electron .",
+    "build/renderer": "cd renderer && npm run build",
+    "build/app": "tsc",
+    "build/all": "npm run build/renderer && npm run build/app",
+    "package": "npm run build/all && electron-builder build"
+  },
+  "build": {
+    "appId": "org.livebloom.livebloom",
+    "productName": "LiveBloom",
+    "asar": "true",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist"
+    ],
+    "win": {
+      "artifactName": "${productName}-Windows-${version}.${ext}",
+      "target": {
+        "target": "zip",
+        "arch": [
+          "x64"
+        ]
+      }
+    },
+    "mac": {
+      "artifactName": "${productName}-Mac-${version}.${ext}",
+      "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "artifactName": "${productName}-Linux-${version}.${ext}"
+    }
   },
   "repository": {
     "type": "git",
@@ -15,6 +46,10 @@
   "bugs": {
     "url": "https://github.com/LiveBloom/LiveBloom/issues"
   },
-  "homepage": "https://github.com/LiveBloom/LiveBloom#readme",
-  "private": true
+  "homepage": "https://livebloom.github.io/",
+  "private": true,
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0"
+  }
 }
